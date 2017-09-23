@@ -4,7 +4,7 @@
 #
 Name     : perl-Class-Singleton
 Version  : 1.5
-Release  : 13
+Release  : 14
 URL      : http://search.cpan.org/CPAN/authors/id/S/SH/SHAY/Class-Singleton-1.5.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/S/SH/SHAY/Class-Singleton-1.5.tar.gz
 Summary  : Base class for creating singleton objects
@@ -64,7 +64,7 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.0/Class/Singleton.pm
+/usr/lib/perl5/site_perl/5.26.1/Class/Singleton.pm
 
 %files doc
 %defattr(-,root,root,-)
