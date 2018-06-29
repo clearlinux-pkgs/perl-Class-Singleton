@@ -1,5 +1,5 @@
 PKG_NAME := perl-Class-Singleton
-URL := http://search.cpan.org/CPAN/authors/id/S/SH/SHAY/Class-Singleton-1.5.tar.gz
-
+URL = https://cpan.metacpan.org/authors/id/S/SH/SHAY/Class-Singleton-1.5.tar.gz
+ARCHIVES = 
 
 include ../common/Makefile.common

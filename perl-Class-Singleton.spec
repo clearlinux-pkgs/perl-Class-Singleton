@@ -4,13 +4,13 @@
 #
 Name     : perl-Class-Singleton
 Version  : 1.5
-Release  : 16
-URL      : http://search.cpan.org/CPAN/authors/id/S/SH/SHAY/Class-Singleton-1.5.tar.gz
-Source0  : http://search.cpan.org/CPAN/authors/id/S/SH/SHAY/Class-Singleton-1.5.tar.gz
+Release  : 17
+URL      : https://cpan.metacpan.org/authors/id/S/SH/SHAY/Class-Singleton-1.5.tar.gz
+Source0  : https://cpan.metacpan.org/authors/id/S/SH/SHAY/Class-Singleton-1.5.tar.gz
 Summary  : Base class for creating singleton objects
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
-Requires: perl-Class-Singleton-doc
+Requires: perl-Class-Singleton-man
 BuildRequires : perl(Test::More)
 
 %description
@@ -19,12 +19,12 @@ Class::Singleton - Implementation of a "Singleton" class
 SYNOPSIS
 use Class::Singleton;
 
-%package doc
-Summary: doc components for the perl-Class-Singleton package.
-Group: Documentation
+%package man
+Summary: man components for the perl-Class-Singleton package.
+Group: Default
 
-%description doc
-doc components for the perl-Class-Singleton package.
+%description man
+man components for the perl-Class-Singleton package.
 
 
 %prep
@@ -37,7 +37,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
-make V=1  %{?_smp_mflags}
+make  %{?_smp_mflags}
 else
 %{__perl} Build.PL
 ./Build
@@ -66,6 +66,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 %defattr(-,root,root,-)
 /usr/lib/perl5/site_perl/5.26.1/Class/Singleton.pm
 
-%files doc
+%files man
 %defattr(-,root,root,-)
-%doc /usr/share/man/man3/*
+/usr/share/man/man3/Class::Singleton.3
