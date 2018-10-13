@@ -4,13 +4,13 @@
 #
 Name     : perl-Class-Singleton
 Version  : 1.5
-Release  : 18
+Release  : 19
 URL      : https://cpan.metacpan.org/authors/id/S/SH/SHAY/Class-Singleton-1.5.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/S/SH/SHAY/Class-Singleton-1.5.tar.gz
 Summary  : Base class for creating singleton objects
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
-Requires: perl-Class-Singleton-man
+BuildRequires : buildreq-cpan
 BuildRequires : perl(Test::More)
 
 %description
@@ -19,12 +19,13 @@ Class::Singleton - Implementation of a "Singleton" class
 SYNOPSIS
 use Class::Singleton;
 
-%package man
-Summary: man components for the perl-Class-Singleton package.
-Group: Default
+%package dev
+Summary: dev components for the perl-Class-Singleton package.
+Group: Development
+Provides: perl-Class-Singleton-devel = %{version}-%{release}
 
-%description man
-man components for the perl-Class-Singleton package.
+%description dev
+dev components for the perl-Class-Singleton package.
 
 
 %prep
@@ -53,9 +54,9 @@ make TEST_VERBOSE=1 test
 %install
 rm -rf %{buildroot}
 if test -f Makefile.PL; then
-make pure_install PERL_INSTALL_ROOT=%{buildroot}
+make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
-./Build install --installdirs=site --destdir=%{buildroot}
+./Build install --installdirs=vendor --destdir=%{buildroot}
 fi
 find %{buildroot} -type f -name .packlist -exec rm -f {} ';'
 find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null ';'
@@ -64,8 +65,8 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.1/Class/Singleton.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Class/Singleton.pm
 
-%files man
+%files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/Class::Singleton.3
