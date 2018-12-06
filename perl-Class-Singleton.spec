@@ -4,7 +4,7 @@
 #
 Name     : perl-Class-Singleton
 Version  : 1.5
-Release  : 23
+Release  : 24
 URL      : https://cpan.metacpan.org/authors/id/S/SH/SHAY/Class-Singleton-1.5.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/S/SH/SHAY/Class-Singleton-1.5.tar.gz
 Summary  : Base class for creating singleton objects
