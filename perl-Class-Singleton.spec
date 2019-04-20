@@ -4,10 +4,10 @@
 #
 Name     : perl-Class-Singleton
 Version  : 1.5
-Release  : 27
+Release  : 28
 URL      : https://cpan.metacpan.org/authors/id/S/SH/SHAY/Class-Singleton-1.5.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/S/SH/SHAY/Class-Singleton-1.5.tar.gz
-Summary  : Base class for creating singleton objects
+Summary  : Implementation of a singleton class
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
 BuildRequires : buildreq-cpan
@@ -23,6 +23,7 @@ use Class::Singleton;
 Summary: dev components for the perl-Class-Singleton package.
 Group: Development
 Provides: perl-Class-Singleton-devel = %{version}-%{release}
+Requires: perl-Class-Singleton = %{version}-%{release}
 
 %description dev
 dev components for the perl-Class-Singleton package.
