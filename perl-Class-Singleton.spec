@@ -4,12 +4,13 @@
 #
 Name     : perl-Class-Singleton
 Version  : 1.5
-Release  : 30
+Release  : 31
 URL      : https://cpan.metacpan.org/authors/id/S/SH/SHAY/Class-Singleton-1.5.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/S/SH/SHAY/Class-Singleton-1.5.tar.gz
-Summary  : Implementation of a singleton class
+Summary  : Base class for creating singleton objects
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
+Requires: perl-Class-Singleton-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : perl(Test::More)
 
@@ -29,14 +30,24 @@ Requires: perl-Class-Singleton = %{version}-%{release}
 dev components for the perl-Class-Singleton package.
 
 
+%package perl
+Summary: perl components for the perl-Class-Singleton package.
+Group: Default
+Requires: perl-Class-Singleton = %{version}-%{release}
+
+%description perl
+perl components for the perl-Class-Singleton package.
+
+
 %prep
 %setup -q -n Class-Singleton-1.5
+cd %{_builddir}/Class-Singleton-1.5
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -46,7 +57,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -66,8 +77,11 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/Class/Singleton.pm
 
 %files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/Class::Singleton.3
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/Class/Singleton.pm
