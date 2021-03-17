@@ -4,12 +4,12 @@
 #
 Name     : perl-Class-Singleton
 Version  : 1.6
-Release  : 34
+Release  : 35
 URL      : https://cpan.metacpan.org/authors/id/S/SH/SHAY/Class-Singleton-1.6.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/S/SH/SHAY/Class-Singleton-1.6.tar.gz
 Summary  : 'Implementation of a "Singleton" class '
 Group    : Development/Tools
-License  : Artistic-1.0-Perl GPL-1.0
+License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
 Requires: perl-Class-Singleton-license = %{version}-%{release}
 Requires: perl-Class-Singleton-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
@@ -76,6 +76,7 @@ make TEST_VERBOSE=1 test
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/perl-Class-Singleton
 cp %{_builddir}/Class-Singleton-1.6/Copying %{buildroot}/usr/share/package-licenses/perl-Class-Singleton/18eaf66587c5eea277721d5e569a6e3cd869f855
+cp %{_builddir}/Class-Singleton-1.6/LICENCE %{buildroot}/usr/share/package-licenses/perl-Class-Singleton/2a7c640d77e195b3674ec8e5e126b3ac7a1ce1a1
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -96,7 +97,8 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 %files license
 %defattr(0644,root,root,0755)
 /usr/share/package-licenses/perl-Class-Singleton/18eaf66587c5eea277721d5e569a6e3cd869f855
+/usr/share/package-licenses/perl-Class-Singleton/2a7c640d77e195b3674ec8e5e126b3ac7a1ce1a1
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.3/Class/Singleton.pm
+/usr/lib/perl5/vendor_perl/5.32.1/Class/Singleton.pm
