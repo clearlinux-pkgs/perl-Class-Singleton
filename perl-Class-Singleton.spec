@@ -4,7 +4,7 @@
 #
 Name     : perl-Class-Singleton
 Version  : 1.6
-Release  : 41
+Release  : 42
 URL      : https://cpan.metacpan.org/authors/id/S/SH/SHAY/Class-Singleton-1.6.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/S/SH/SHAY/Class-Singleton-1.6.tar.gz
 Summary  : 'Implementation of a "Singleton" class '
@@ -101,4 +101,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.34.0/Class/Singleton.pm
+/usr/lib/perl5/*
