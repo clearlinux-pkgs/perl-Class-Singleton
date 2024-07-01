@@ -4,7 +4,7 @@
 #
 Name     : perl-Class-Singleton
 Version  : 1.6
-Release  : 45
+Release  : 46
 URL      : https://cpan.metacpan.org/authors/id/S/SH/SHAY/Class-Singleton-1.6.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/S/SH/SHAY/Class-Singleton-1.6.tar.gz
 Summary  : 'Implementation of a "Singleton" class '
